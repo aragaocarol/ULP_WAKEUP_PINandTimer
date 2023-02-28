@@ -1,0 +1,18 @@
+# ninja log v5
+1	1486	6993163182678292	ulp_fsm.ld	c18799f156ef99d
+1	1486	6993163182678292	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_fsm.ld	c18799f156ef99d
+1563	2804	6993163196608624	pulse_cnt.ulp.S	557c33f47a7eb713
+1563	2804	6993163196608624	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/pulse_cnt.ulp.S	557c33f47a7eb713
+1487	2865	6993163197338269	wake_up.ulp.S	e66e0b6bb4fcf75b
+1487	2865	6993163197338269	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/wake_up.ulp.S	e66e0b6bb4fcf75b
+2866	3063	6993163201962436	CMakeFiles/ulp_main.dir/pulse_cnt.ulp.S.obj	ab81fe9f9e1bf90f
+2934	3070	6993163201604176	CMakeFiles/ulp_main.dir/wake_up.ulp.S.obj	cf26a504d121c3da
+3071	4077	6993163209909958	ulp_main	719ce787cac5e49d
+4078	4504	6993163216277725	ulp_main.bin	fd3545897aaaf267
+4078	4504	6993163216277725	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_main.bin	fd3545897aaaf267
+4133	4512	6993163216474605	ulp_main.sym	6fa1a7e7d5ac7e13
+4133	4512	6993163216474605	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_main.sym	6fa1a7e7d5ac7e13
+4513	5068	6993163221915922	ulp_main.ld	8583450238099bb2
+4513	5068	6993163221915922	ulp_main.h	8583450238099bb2
+4513	5068	6993163221915922	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_main.ld	8583450238099bb2
+4513	5068	6993163221915922	C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_main.h	8583450238099bb2
