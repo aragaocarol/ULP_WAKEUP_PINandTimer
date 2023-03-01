@@ -55,14 +55,14 @@ void app_main(void)
                     printf("TIMER, saving pulse count\n");
                     valor = gpio_get_level(INT1_PIN);
                     update_pulse_count();
-                    init_ble();
+                    if(count_acion)init_ble();
                      
                 }
                 else {
                     printf("ULP MAXCOUNT, saving pulse count\n");
                     valor = gpio_get_level(INT1_PIN);
                     update_pulse_count();
-                    init_ble();
+                    if(count_acion)init_ble();
                 }
             }
             init_ulp_program();
