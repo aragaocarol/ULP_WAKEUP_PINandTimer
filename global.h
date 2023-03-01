@@ -7,6 +7,7 @@
 #include "freertos/queue.h"  
 
 int count_acion;
+bool valor;
 void init_ble(void);
 
 #endif  //!__GLOBAL__H__

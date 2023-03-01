@@ -30,7 +30,6 @@ static int device_read(uint16_t con_handle, uint16_t attr_handle, struct ble_gat
     has_called_read_chr = true;
 
     char payload[40] = {"0"};
-    bool valor = gpio_get_level(INT1_PIN);
     float bat = 3.2;
     uint8_t  baseMac[6] = {0};
     char baseMacChr[13] = {0};
@@ -46,7 +45,7 @@ static int device_read(uint16_t con_handle, uint16_t attr_handle, struct ble_gat
                                     baseMac[5]);
 
 
-    sprintf(payload, "{\"pin\":%d, \"v\":%0.2f, \"m\":%s}", valor, bat, baseMacChr);
+    sprintf(payload, "{\"pin\":%d,\"v\":%0.2f, \"m\":\"%s\"}", valor, bat, baseMacChr);
     printf("payload:%s\n", payload);
 
     int rc = os_mbuf_append(ctxt->om, payload, strlen(payload));

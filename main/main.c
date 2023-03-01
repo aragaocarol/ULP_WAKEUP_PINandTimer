@@ -53,15 +53,14 @@ void app_main(void)
             } else {
                 if(cause == ESP_SLEEP_WAKEUP_TIMER ){
                     printf("TIMER, saving pulse count\n");
-                    bool valor = gpio_get_level(INT1_PIN);
+                    valor = gpio_get_level(INT1_PIN);
                     update_pulse_count();
                     init_ble();
-    
                      
                 }
                 else {
                     printf("ULP MAXCOUNT, saving pulse count\n");
-                    bool valor = gpio_get_level(INT1_PIN);
+                    valor = gpio_get_level(INT1_PIN);
                     update_pulse_count();
                     init_ble();
                 }
@@ -109,16 +108,17 @@ static void init_ulp_program(void)
     rtc_gpio_pullup_dis(gpio_num);
     rtc_gpio_hold_en(gpio_num);
 
-    int valor = gpio_get_level(gpio_num);
+    bool valor_new = gpio_get_level(INT1_PIN);
    // printf("gpio: %d\n", valor);
 
-    if(valor == 1){
+    if(valor_new == 1){
         ulp_next_edge  = 0;
 
     }else{
 
         ulp_next_edge  = 1;
     }
+    printf("ulp_next_edge: %d\n", ulp_next_edge);
 
     /* Disconnect GPIO12 and GPIO15 to remove current drain through
      * pullup/pulldown resistors.
@@ -145,7 +145,7 @@ static void update_pulse_count(void)
     uint32_t pulse_count_from_ulp = (ulp_edge_count & UINT16_MAX);
     count_acion = pulse_count_from_ulp;
     /* In case of an odd number of edges, keep one until next time */
-    ulp_edge_count = 0;
+    ulp_edge_count = 0x00;
     printf("count action: %d\n",count_acion);
 
 }
