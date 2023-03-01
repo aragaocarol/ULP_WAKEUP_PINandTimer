@@ -1,6 +1,6 @@
-idf_component_register(SRCS "main.c" 
+idf_component_register(SRCS "main.c" "ble.c" "esp8266_wrapper.c"
 					  INCLUDE_DIRS "include"
-					  REQUIRES soc nvs_flash ulp)
+					  REQUIRES soc nvs_flash ulp bt)
 
   # ULP support additions to component CMakeLists.txt.
   #

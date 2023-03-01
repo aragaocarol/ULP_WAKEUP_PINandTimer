@@ -1,11 +1,3 @@
-/* ULP Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
 
 #include <stdio.h>
 
@@ -24,6 +16,8 @@
 #include "esp_event.h"
 #include "nvs_flash.h"
 #include "esp_log.h"
+#include "esp8266_wrapper.h"
+#include "../../global.h"
 
 extern const uint8_t ulp_main_bin_start[] asm("_binary_ulp_main_bin_start");
 extern const uint8_t ulp_main_bin_end[]   asm("_binary_ulp_main_bin_end");
@@ -38,7 +32,6 @@ static void init_ulp_program(void);
 
 /* ----- user tasks ----------------------------- */
 
-int count_acion = 0;
 
 void app_main(void)
 {
@@ -60,24 +53,26 @@ void app_main(void)
             } else {
                 if(cause == ESP_SLEEP_WAKEUP_TIMER ){
                     printf("TIMER, saving pulse count\n");
+                    bool valor = gpio_get_level(INT1_PIN);
                     update_pulse_count();
-
-                    vTaskDelay(2000 / portTICK_RATE_MS);  
+                    init_ble();
+    
                      
                 }
                 else {
                     printf("ULP MAXCOUNT, saving pulse count\n");
+                    bool valor = gpio_get_level(INT1_PIN);
                     update_pulse_count();
-                    vTaskDelay(2000 / portTICK_RATE_MS);
+                    init_ble();
                 }
             }
             init_ulp_program();
-            printf("Entering deep sleep\n\n"); 
-            const int wakeup_time_sec = 3200; // define em quanto tempo ele deve acordar do sleep
-            printf("Enabling timer wakeup, %ds\n", wakeup_time_sec); 
+            printf( "Entering deep sleep\n\n");
+            const uint64_t wakeup_time_sec = 1*30; // define em quanto tempo ele deve acordar do sleep
+            printf("Enabling timer wakeup, %ds\n", (int)wakeup_time_sec);
             ESP_ERROR_CHECK(esp_sleep_enable_ulp_wakeup());
-            ESP_ERROR_CHECK(esp_sleep_enable_timer_wakeup(wakeup_time_sec * 1000000)); // configura para acordar do sleep se o timer atingir o tempo definido
-            esp_deep_sleep_start(); // inicia o sleep
+            ESP_ERROR_CHECK(esp_sleep_enable_timer_wakeup(wakeup_time_sec * 1000000ull)); // configura para acordar do sleep se o timer atingir o tempo definido
+            esp_deep_sleep_start();          
         }
 
 
@@ -103,8 +98,7 @@ static void init_ulp_program(void)
      */
     ulp_debounce_counter = 3;
     ulp_debounce_max_count = 3;
-    ulp_next_edge  = 
-    
+    ulp_next_edge  =
     ulp_io_number = rtcio_num; /* map from GPIO# to RTC_IO# */
     ulp_edge_count_to_wake_up = 1; /* dobro de acionamentos desejados */
 
@@ -116,10 +110,13 @@ static void init_ulp_program(void)
     rtc_gpio_hold_en(gpio_num);
 
     int valor = gpio_get_level(gpio_num);
+   // printf("gpio: %d\n", valor);
 
     if(valor == 1){
         ulp_next_edge  = 0;
+
     }else{
+
         ulp_next_edge  = 1;
     }
 

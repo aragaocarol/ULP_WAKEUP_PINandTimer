@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/mariacarolina.andrad/Downloads/ULP_WAKEUP_PINandTimer/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

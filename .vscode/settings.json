@@ -1,3 +1,8 @@
 {
+    "files.associations": {
+        "global.h": "c"
+    },
+    "idf.flashType": "UART",
+    "idf.portWin": "COM3",
     "idf.adapterTargetName": "esp32"
 }

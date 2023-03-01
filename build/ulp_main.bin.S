@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_main.bin
+/* * Data converted from C:/Users/mariacarolina.andrad/Downloads/ULP_WAKEUP_PINandTimer/build/esp-idf/main/ulp_main/ulp_main.bin
  */
 .data
 .section .rodata.embedded

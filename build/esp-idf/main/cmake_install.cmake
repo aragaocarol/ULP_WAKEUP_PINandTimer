@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/main
+# Install script for directory: C:/Users/mariacarolina.andrad/Downloads/ULP_WAKEUP_PINandTimer/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

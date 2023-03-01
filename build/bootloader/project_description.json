@@ -1,8 +1,8 @@
 {
     "project_name":       "bootloader",
     "project_path":       "C:/Users/mariacarolina.andrad/esp/esp-idf/components/bootloader/subproject",
-    "build_dir":          "C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/build/bootloader",
-    "config_file":        "C:/Users/mariacarolina.andrad/Downloads/banheiros/ULP_WAKEUP_PINandTimer/sdkconfig",
+    "build_dir":          "C:/Users/mariacarolina.andrad/Downloads/ULP_WAKEUP_PINandTimer/build/bootloader",
+    "config_file":        "C:/Users/mariacarolina.andrad/Downloads/ULP_WAKEUP_PINandTimer/sdkconfig",
     "config_defaults":    "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
